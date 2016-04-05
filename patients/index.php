@@ -8,10 +8,10 @@
 		<thead>
 			<tr>
 				<th>Name</th>
-				<th>Species</th>
 				<th>Status</th>
-				<th></th>
-				<th></th>
+				<th>Species</th>
+				<th>Client</th>
+				<th colspan="2"></th>
 			</tr>
 		</thead>
 		</tbody>
@@ -19,11 +19,12 @@
 	foreach($patients as $patient):
 ?>
 			<tr>
-				<td><?=$patient['pname']?></td>
-				<td><?=$patient['species']?></td>
+				<td><?=$patient['name']?></td>
 				<td><?=$patient['status']?></td>
-				<td class="center"><a href="edit.php?id=<?=$patient['id']?>">edit</a></td>
-				<td class="center"><a href="delete.php?id=<?=$patient['id']?>">delete</a></td>
+				<td><?=$patient['species']?></td>
+				<td><?=$patient['clients']?></td>
+				<td><a href="edit.php?id=<?=$patient['id']?>">edit</a></td>
+				<td><a href="delete.php?id=<?=$patient['id']?>">delete</a></td>
 			</tr>
 
 <?php

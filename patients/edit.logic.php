@@ -6,10 +6,17 @@
 			$db = new mysqli('localhost','root','','hospital');
 			$id = $db->escape_string($_GET["id"]);
 			
-			$query = "select * from patient where id=$id";
-			$result = $db->query($query);
-		
-			$patient = $result->fetch_assoc();		
+			$speciesQuery = "SELECT * FROM species ";
+			$clientsQuery = "SELECT * FROM clients ";
+			$patientsQuery = "SELECT * FROM patient where id=$id";
+
+			$speciesResult = $db->query($speciesQuery);
+			$clientsResult = $db->query($clientsQuery);
+			$patientsResult = $db->query($patientsQuery);
+
+			$species = $speciesResult->fetch_all(MYSQLI_ASSOC);
+			$clients = $clientsResult->fetch_all(MYSQLI_ASSOC);
+			$patient = $patientsResult->fetch_assoc();		
 		endif;
 		if ($patient == NULL):
 			// No patient found
@@ -23,11 +30,15 @@
 		// Prepare data for update
 		$id = $db->escape_string($_POST["id"]);
 		$name = $db->escape_string($_POST["name"]);
-		$species = $db->escape_string($_POST["species"]);
+		$species_id = $db->escape_string($_POST["species"]);
 		$status = $db->escape_string($_POST["status"]);
+		$clients_id = $db->escape_string($_POST["clients"]);
 		
 		// Prepare query and execute
-		$query = "update patient set name='$name', species='$species', status='$status' where id=$id";
+		$query = "UPDATE patient 
+		SET name='$name', species_id='$species_id', status='$status', clients_id='$clients_id' 
+		WHERE id=$id";
+		
 		$result = $db->query($query);
 	
     // Tell the browser to go back to the index page.

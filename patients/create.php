@@ -9,13 +9,25 @@
 			<input type="text" id="name" name="name">
 		</div>
 		<div>
-			<label for="name">Species:</label>
-			<input type="text" id="species" name="species">
-		</div>
-		<div>
 			<label for="name">Status:</label>
 			<textarea id="status" name="status"></textarea>
 		</div>
+		<div>
+			<label for="name">Species:</label>
+			<select name="species" id="species">
+				<?php foreach ($species as $specie) { ?>}
+				<option value=<?php echo $specie['id'];?>><?php echo $specie['name'];?></option>
+				<?php } ?>
+			</select>
+		</div>
+		<div>
+			<label for="name">Clients:</label>
+			<select name="clients" id="clients">
+				<?php foreach ($clients as $client) { ?>}
+				<option value=<?php echo $client['id'];?>><?php echo $client['name'];?></option>
+				<?php } ?>
+			</select>
+		</div>		
 		<div>
 			<label></label>
 			<input type="submit" value="Save">
