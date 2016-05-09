@@ -1,4 +1,4 @@
-xx<?php
+<?php
 	if ($_SERVER["REQUEST_METHOD"] == "GET"):
 		$patient = NULL;
 		if (isset($_GET['id'])):

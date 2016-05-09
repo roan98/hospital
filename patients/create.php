@@ -13,6 +13,13 @@
 			<textarea id="status" name="status"></textarea>
 		</div>
 		<div>
+			<label for="name">Gender:</label><br>
+			<label for="name">Male:</label>
+			<input type="radio" name="gender" value="Male" checked></input><br>
+			<label for="name">Female:</label>
+			<input type="radio" name="gender" value="Female"></input><br>
+		</div>
+		<div>
 			<label for="name">Species:</label>
 			<select name="species" id="species">
 				<?php foreach ($species as $specie) { ?>}

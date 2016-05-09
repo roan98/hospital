@@ -20,15 +20,17 @@
 		$name = $db->escape_string($_POST["name"]);
 		$species_id = $db->escape_string($_POST["species"]);
 		$status = $db->escape_string($_POST["status"]);
+		$gender = $db->escape_string($_POST["gender"]);
 		$clients_id = $db->escape_string($_POST["clients"]);
 		
 		// Prepare query and execute
-		$query = "INSERT INTO patient (name, status, species_id, clients_id) values ('$name','$status','$species_id','$clients_id')";
+		$query = "INSERT INTO patient (name, status, gender, species_id, clients_id) values ('$name','$status','$gender','$species_id','$clients_id')";
 		$result = $db->query($query);
 		
 	    // Tell the browser to go back to the index page.
 	    header("Location: ./");
 	    exit();
+
 	}
 
 ?>	

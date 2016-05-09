@@ -32,11 +32,12 @@
 		$name = $db->escape_string($_POST["name"]);
 		$species_id = $db->escape_string($_POST["species"]);
 		$status = $db->escape_string($_POST["status"]);
+		$gender = $db->escape_string($_POST["gender"]);
 		$clients_id = $db->escape_string($_POST["clients"]);
 		
 		// Prepare query and execute
 		$query = "UPDATE patient 
-		SET name='$name', species_id='$species_id', status='$status', clients_id='$clients_id' 
+		SET name='$name', species_id='$species_id', status='$status', gender='$gender', clients_id='$clients_id' 
 		WHERE id=$id";
 		
 		$result = $db->query($query);

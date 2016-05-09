@@ -9,15 +9,20 @@
 			<input type="hidden" name="id" value="<?=$patient['id']?>">
 			<label for="name">Name:</label>
 			<span><?=$patient['name']?></span>
+		</div>		
+		<div>
+			<label for="name">Status:</label>
+			<span><?=$patient['status']?></span>
+		</div>
+		<div>
+			<label for="name">gender:</label>
+			<span><?=$patient['gender']?></span>
 		</div>
 		<div>
 			<label for="name">Species:</label>
 			<span><?=$patient['species_id']?></span>
 		</div>
-		<div>
-			<label for="name">Status:</label>
-			<span><?=$patient['status']?></span>
-		</div>
+
 		<div>
 			<label for="name">client:</label>
 			<span><?=$patient['clients_id']?></span>
